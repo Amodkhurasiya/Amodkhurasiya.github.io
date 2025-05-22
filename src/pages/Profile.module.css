@@ -1,0 +1,579 @@
+.profile {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.container {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+}
+
+.title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #333;
+  text-align: center;
+}
+
+.section {
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #eee;
+}
+
+.section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.section h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #555;
+}
+
+.section h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #555;
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.sectionHeader h2 {
+  margin-bottom: 0;
+}
+
+.editButton {
+  padding: 0.5rem 1rem;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.editButton:hover {
+  background-color: #3a7bc8;
+}
+
+/* Error and Success Messages */
+.error {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  border-left: 4px solid #f5c6cb;
+}
+
+.success {
+  background-color: #d4edda;
+  color: #155724;
+  padding: 0.75rem 1rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  border-left: 4px solid #c3e6cb;
+}
+
+/* Profile Info Styles */
+.profileInfo {
+  margin-bottom: 1rem;
+}
+
+.infoRow {
+  margin-bottom: 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.infoField {
+  flex: 1;
+  min-width: 250px;
+}
+
+.fieldLabel {
+  font-weight: 600;
+  color: #666;
+  margin-right: 0.5rem;
+}
+
+.fieldValue {
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Form Styles */
+.form {
+  margin-bottom: 1rem;
+}
+
+.formRow {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.formGroup {
+  margin-bottom: 1.25rem;
+  flex: 1;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #444;
+}
+
+.formGroup small {
+  display: block;
+  color: #888;
+  font-size: 0.8rem;
+  margin-top: 0.25rem;
+}
+
+.formGroup input,
+.formGroup select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.formGroup input:focus,
+.formGroup select:focus {
+  outline: none;
+  border-color: #4a90e2;
+  box-shadow: 0 0 0 2px rgba(74, 144, 226, 0.2);
+}
+
+.formGroup input:disabled {
+  background-color: #f9f9f9;
+  cursor: not-allowed;
+}
+
+.buttonGroup {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.cancelButton {
+  padding: 0.75rem 1.5rem;
+  background-color: #f0f0f0;
+  color: #333;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.cancelButton:hover {
+  background-color: #e0e0e0;
+}
+
+.saveButton {
+  padding: 0.75rem 1.5rem;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.saveButton:hover {
+  background-color: #3a7bc8;
+}
+
+.saveButton:disabled {
+  background-color: #a0c0e8;
+  cursor: not-allowed;
+}
+
+/* Order History Styles */
+.orderHistoryTable {
+  width: 100%;
+  margin-top: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.orderHeader {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr 0.8fr;
+  gap: 10px;
+  background-color: #f0f0f0;
+  padding: 12px 15px;
+  font-weight: 600;
+  color: black;
+  border-bottom: 1px solid #ddd;
+}
+
+.orderHeader span {
+  padding: 0 10px;
+}
+
+.orderRow {
+  display: grid;
+  color: black;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr 0.8fr;
+  gap: 10px;
+  padding: 15px;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  transition: background-color 0.2s;
+}
+
+.orderRow span {
+  padding: 0 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.orderRow:hover {
+  background-color: #f9f9f9;
+}
+
+.orderRow:last-child {
+  border-bottom: none;
+}
+
+.orderStatus {
+  padding: 4px 8px;
+  border-radius: 15px;
+  font-size: 0.9em;
+  font-weight: 500;
+  text-align: center;
+  display: inline-block;
+  min-width: 90px;
+}
+
+.pending {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.confirmed {
+  background-color: #d1ecf1;
+  color: #0c5460;
+}
+
+.processing {
+  background-color: #e2eefd;
+  color: #0c5460;
+}
+
+.shipped {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.delivered {
+  background-color: #c3e6cb;
+  color: #155724;
+}
+
+.cancelled {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.viewOrderButton {
+  background-color: #4a9d61;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.viewOrderButton:hover {
+  background-color: #3d8350;
+  transform: translateY(-2px);
+}
+
+.viewOrderButton:active {
+  transform: translateY(0);
+}
+
+.noOrders {
+  color: #888;
+  font-style: italic;
+  text-align: center;
+  padding: 2rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.shopNowButton {
+  padding: 0.75rem 1.5rem;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.shopNowButton:hover {
+  background-color: #3a7bc8;
+}
+
+.loadingSpinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  color: #666;
+}
+
+.loadingSpinner::after {
+  content: '';
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ddd;
+  border-top-color: #4a90e2;
+  border-radius: 50%;
+  margin-left: 10px;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Account Settings Styles */
+.accountSettings {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.changePasswordContainer,
+.deleteAccountContainer {
+  padding: 1.5rem;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+.changePasswordButton {
+  padding: 0.75rem 1.5rem;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: block;
+  margin-top: 1rem;
+}
+
+.changePasswordButton:hover {
+  background-color: #3a7bc8;
+}
+
+.changePasswordButton:disabled {
+  background-color: #a0c0e8;
+  cursor: not-allowed;
+}
+
+.deleteAccountButton {
+  padding: 0.75rem 1.5rem;
+  background-color: white;
+  color: #e74c3c;
+  border: 1px solid #e74c3c;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-top: 1rem;
+}
+
+.deleteAccountButton:hover {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.deleteConfirmation {
+  margin-top: 1rem;
+}
+
+.deleteWarning {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  background-color: #fff3cd;
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+}
+
+.warningIcon {
+  color: #e74c3c;
+  font-size: 1.25rem;
+  margin-top: 0.2rem;
+}
+
+.deleteWarning p {
+  margin: 0;
+  color: #856404;
+}
+
+.deleteButtons {
+  display: flex;
+  gap: 1rem;
+}
+
+.cancelDeleteButton {
+  padding: 0.75rem 1.5rem;
+  background-color: #f0f0f0;
+  color: #333;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  flex: 1;
+}
+
+.cancelDeleteButton:hover {
+  background-color: #e0e0e0;
+}
+
+.confirmDeleteButton {
+  padding: 0.75rem 1.5rem;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  flex: 1;
+}
+
+.confirmDeleteButton:hover {
+  background-color: #d63031;
+}
+
+.confirmDeleteButton:disabled {
+  background-color: #f8a8a5;
+  cursor: not-allowed;
+}
+
+/* Profile Navigation Links */
+.profileNavigationLinks {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.profileNavLink {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.5rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  border: 1px solid #eee;
+  cursor: pointer;
+  color: #555;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  flex: 1;
+  text-align: left;
+}
+
+.profileNavLink:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profileNavLink.active {
+  background-color: #4a90e2;
+  color: white;
+  border-color: #4a90e2;
+}
+
+.profileNavLink.active .navIcon {
+  color: white;
+}
+
+.navIcon {
+  color: #4a90e2;
+  font-size: 1.2rem;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .profileNavigationLinks {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .formRow {
+    flex-direction: column;
+    gap: 0;
+  }
+  
+  .orderHeader,
+  .orderRow {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  
+  .orderHeader span:nth-child(4),
+  .orderHeader span:nth-child(5),
+  .orderRow span:nth-child(4) {
+    display: none;
+  }
+  
+  .orderRow button {
+    grid-column: span 3;
+    justify-self: center;
+    margin-top: 0.5rem;
+  }
+  
+  .buttonGroup {
+    flex-direction: column;
+  }
+  
+  .cancelButton,
+  .saveButton {
+    width: 100%;
+  }
+  
+  .deleteButtons {
+    flex-direction: column;
+  }
+} 

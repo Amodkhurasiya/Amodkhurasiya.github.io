@@ -1,0 +1,543 @@
+.productManagement {
+  min-height: 100vh;
+  background-color: #1a1c23;
+  padding: 2rem;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+}
+
+.backButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: none;
+  border: none;
+  color: #6366f1;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+  font-family: 'Poppins', sans-serif;
+}
+
+.backButton:hover {
+  background-color: rgba(99, 102, 241, 0.1);
+}
+
+.statsOverview {
+  display: flex;
+  gap: 20px;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.statsOverview div {
+  color: #9da3b0;
+}
+
+.statsOverview span {
+  color: #6366f1;
+  font-weight: 600;
+  margin-left: 5px;
+}
+
+.addButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #6366f1;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1.25rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-family: 'Poppins', sans-serif;
+}
+
+.addButton:hover {
+  background-color: #4f46e5;
+}
+
+.filterSection {
+  background-color: #252836;
+  padding: 1.25rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  align-items: flex-end;
+}
+
+.filterGroup {
+  display: flex;
+  flex-direction: column;
+  min-width: 200px;
+  flex: 1;
+}
+
+.filterGroup label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: #9da3b0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.filterSelect, .priceInput, .searchInput {
+  padding: 0.75rem;
+  border: 1px solid #374151;
+  border-radius: 8px;
+  background-color: #2e3447;
+  font-size: 0.9rem;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+}
+
+.filterSelect:focus, .priceInput:focus, .searchInput:focus {
+  outline: none;
+  border-color: #6366f1;
+}
+
+.priceRangeInputs {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.priceInput {
+  width: 80px;
+}
+
+.rangeSeparator {
+  color: #9da3b0;
+}
+
+.searchWrapper {
+  position: relative;
+  flex-grow: 1;
+  min-width: 200px;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #9da3b0;
+}
+
+.searchInput {
+  width: 100%;
+  padding-left: 35px;
+}
+
+.resetButton {
+  padding: 0.75rem 1rem;
+  background-color: #374151;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-left: auto;
+  font-family: 'Poppins', sans-serif;
+}
+
+.resetButton:hover {
+  background-color: #4b5563;
+}
+
+.resultSummary {
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  color: #9da3b0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.tableContainer {
+  background-color: #252836;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.productsTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.productsTable th, .productsTable td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #374151;
+}
+
+.productsTable th {
+  background-color: #1e2230;
+  color: #9da3b0;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+}
+
+.productsTable td {
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+}
+
+.tableBody tr:hover {
+  background-color: #2e3447;
+}
+
+.sortButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: none;
+  border: none;
+  color: #9da3b0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.sortButton:hover {
+  color: #6366f1;
+}
+
+.productImage {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.noImage {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #2e3447;
+  border-radius: 8px;
+  color: #9da3b0;
+  font-size: 1.25rem;
+}
+
+.productName {
+  font-weight: 500;
+  color: #fff;
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.productPrice {
+  font-weight: 600;
+  color: #6366f1;
+}
+
+.status {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.statusInStock {
+  background-color: rgba(16, 185, 129, 0.2);
+  color: #10b981;
+}
+
+.statusLowStock {
+  background-color: rgba(245, 158, 11, 0.2);
+  color: #f59e0b;
+}
+
+.statusOutOfStock {
+  background-color: rgba(239, 68, 68, 0.2);
+  color: #ef4444;
+}
+
+.actionButtons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.viewButton, .editButton, .deleteButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0 0.75rem;
+  height: 2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.85rem;
+  min-width: 80px;
+}
+
+.viewButton {
+  background-color: #6366f1;
+}
+
+.viewButton:hover {
+  background-color: #4f46e5;
+}
+
+.editButton {
+  background-color: #10b981;
+}
+
+.editButton:hover {
+  background-color: #059669;
+}
+
+.deleteButton {
+  background-color: #ef4444;
+}
+
+.deleteButton:hover {
+  background-color: #dc2626;
+}
+
+.noProducts {
+  text-align: center;
+  padding: 2rem;
+  color: #9da3b0;
+  font-style: italic;
+  font-family: 'Poppins', sans-serif;
+}
+
+.loading, .error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  background-color: #252836;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-size: 1rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.loading {
+  color: #6366f1;
+}
+
+.error {
+  color: #ef4444;
+}
+
+.retryButton {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #6366f1;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-family: 'Poppins', sans-serif;
+}
+
+.retryButton:hover {
+  background-color: #4f46e5;
+}
+
+/* Modal Styles */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 1.5rem;
+}
+
+.modalContent {
+  background-color: #1f2937;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+  width: 90%;
+  max-width: 800px;
+  max-height: 85vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.modalContent h2 {
+  margin: 0;
+  padding: 1.5rem;
+  background-color: #252836;
+  border-bottom: 1px solid #374151;
+  color: #fff;
+  font-size: 1.5rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+}
+
+.modalContent form {
+  padding: 1.5rem;
+  overflow-y: auto;
+  max-height: calc(85vh - 150px);
+}
+
+.formGroup {
+  margin-bottom: 1.25rem;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #9da3b0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.formGroup input, .formGroup select, .formGroup textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #374151;
+  border-radius: 8px;
+  background-color: #252836;
+  font-size: 0.9rem;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+}
+
+.formGroup textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.imagePreview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.imagePreview img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.modalActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  padding: 1.5rem;
+  background-color: #252836;
+  border-top: 1px solid #374151;
+}
+
+.cancelButton, .submitButton {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-family: 'Poppins', sans-serif;
+}
+
+.cancelButton {
+  background-color: #374151;
+  color: white;
+}
+
+.cancelButton:hover {
+  background-color: #4b5563;
+}
+
+.submitButton {
+  background-color: #6366f1;
+  color: white;
+}
+
+.submitButton:hover {
+  background-color: #4f46e5;
+}
+
+@media (max-width: 992px) {
+  .filterSection {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .filterGroup, .searchWrapper {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .productManagement {
+    padding: 1rem;
+  }
+  
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  
+  .productsTable th:nth-child(3),
+  .productsTable td:nth-child(3) {
+    display: none;
+  }
+  
+  .productsTable th,
+  .productsTable td {
+    padding: 0.75rem 0.5rem;
+    font-size: 0.85rem;
+  }
+  
+  .modalContent {
+    width: 95%;
+  }
+} 

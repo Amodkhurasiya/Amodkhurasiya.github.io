@@ -1,0 +1,653 @@
+.homePage {
+  background-color: var(--dark-bg);
+  color: var(--gray-300);
+  padding-top: 80px;
+}
+
+/* Hero Section */
+.heroSection {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  padding: 5rem 0;
+}
+
+.heroContent {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  width: 100%;
+  gap: 3rem;
+}
+
+.heroText {
+  flex: 1;
+  min-width: 300px;
+  max-width: 600px;
+  z-index: 2;
+}
+
+.heroText h1 {
+  font-family: var(--font-accent);
+  font-size: 3.5rem;
+  line-height: 1.2;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+  color: var(--white);
+}
+
+.heroText p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+  color: var(--gray-100);
+}
+
+.accent {
+  color: var(--primary);
+  position: relative;
+  display: inline-block;
+}
+
+.accent::after {
+  content: '';
+  position: absolute;
+  bottom: 8px;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background-color: var(--tribal-amber);
+  opacity: 0.3;
+  z-index: -1;
+}
+
+.heroCta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.primaryBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--primary);
+  color: var(--white);
+  padding: 0.8rem 1.5rem;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.primaryBtn svg {
+  font-size: 0.9rem;
+  transition: transform 0.3s ease;
+}
+
+.primaryBtn:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 15px rgba(232, 76, 61, 0.2);
+}
+
+.primaryBtn:hover svg {
+  transform: translateX(3px);
+}
+
+.secondaryBtn {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  color: var(--white);
+  padding: 0.8rem 1.5rem;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  border: 1px solid var(--gray-600);
+  transition: all 0.3s ease;
+}
+
+.secondaryBtn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  transform: translateY(-3px);
+}
+
+.heroImageContainer {
+  flex: 1;
+  position: relative;
+  min-height: 500px;
+  min-width: 300px;
+}
+
+.heroPattern {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/images/tribal-pattern.png');
+  background-size: cover;
+  opacity: 0.2;
+  z-index: 1;
+  transform-origin: center;
+}
+
+.heroImage {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/images/hero-image.jpg');
+  background-size: cover;
+  background-position: center;
+  border-radius: 16px;
+  z-index: 2;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.scrollIndicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--gray-300);
+  font-size: 0.8rem;
+  z-index: 10;
+}
+
+.mouse {
+  width: 30px;
+  height: 50px;
+  border: 2px solid var(--gray-400);
+  border-radius: 20px;
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+
+.mouse::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 6px;
+  background-color: var(--primary);
+  border-radius: 50%;
+}
+
+/* Section Styles */
+section {
+  padding: 6rem 0;
+  position: relative;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.sectionHeader {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 4rem;
+}
+
+.sectionHeader h2 {
+  font-family: var(--font-accent);
+  font-size: 2.5rem;
+  color: var(--white);
+  margin-bottom: 1.5rem;
+  position: relative;
+  display: inline-block;
+}
+
+.sectionHeader h2::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: var(--primary);
+}
+
+.sectionHeader p {
+  color: var(--gray-100);
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Categories Section */
+.categoriesSection {
+  background-color: var(--dark-bg-lighter);
+  position: relative;
+  overflow: hidden;
+  padding: 6rem 0;
+}
+
+.categoriesSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/images/tribal-bg-pattern.png');
+  background-size: cover;
+  opacity: 0.05;
+  z-index: 1;
+}
+
+.categoriesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 2.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+.categorySkeleton {
+  height: 300px;
+  background-color: var(--dark-bg);
+  border-radius: 12px;
+  animation: pulse 1.5s infinite alternate;
+}
+
+.viewAllContainer {
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.viewAllBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--white);
+  background-color: transparent;
+  border: 1px solid var(--primary);
+  padding: 0.8rem 2rem;
+  font-weight: 600;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.viewAllBtn svg {
+  transition: transform 0.3s ease;
+}
+
+.viewAllBtn:hover {
+  background-color: var(--primary);
+  color: var(--white);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(232, 76, 61, 0.15);
+}
+
+.viewAllBtn:hover svg {
+  transform: translateX(5px);
+}
+
+/* Featured Products Section */
+.featuredSection {
+  position: relative;
+  padding: 7rem 0;
+}
+
+.productsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 3rem;
+}
+
+.productSkeleton {
+  height: 380px;
+  background-color: var(--dark-bg-lighter);
+  border-radius: 12px;
+  animation: pulse 1.5s infinite alternate;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0.8;
+  }
+}
+
+/* Story Section */
+.storySection {
+  background-color: var(--dark-bg-lighter);
+  position: relative;
+  overflow: hidden;
+  padding: 7rem 0;
+}
+
+.storyContent {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+}
+
+.storyText {
+  flex: 1;
+  min-width: 300px;
+}
+
+.storyText h2 {
+  font-family: var(--font-accent);
+  font-size: 2.5rem;
+  color: var(--white);
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.storyText h2::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background-color: var(--primary);
+}
+
+.storyText p {
+  margin-bottom: 1.5rem;
+  line-height: 1.8;
+  color: var(--gray-100);
+}
+
+.textLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.textLink svg {
+  font-size: 0.8rem;
+  transition: transform 0.3s ease;
+}
+
+.textLink:hover {
+  color: var(--tribal-amber);
+}
+
+.textLink:hover svg {
+  transform: translateX(5px);
+}
+
+.storyImage {
+  flex: 1;
+  min-width: 300px;
+  height: 400px;
+  background-image: url('/images/artisans.jpg');
+  background-size: cover;
+  background-position: center;
+  border-radius: 16px;
+  position: relative;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.storyImageOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--tribal-red-transparent) 0%, var(--tribal-amber-transparent) 100%);
+  opacity: 0.6;
+  border-radius: 16px;
+}
+
+/* Features Section */
+.featuresSection {
+  background-color: var(--dark-bg);
+  padding: 6rem 0;
+}
+
+.featureCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 3rem;
+}
+
+.featureCard {
+  padding: 2.5rem;
+  background-color: var(--dark-bg-lighter);
+  border-radius: 12px;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.featureCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.featureIcon {
+  font-size: 2.2rem;
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+}
+
+.featureCard h3 {
+  font-size: 1.2rem;
+  color: var(--white);
+  margin-bottom: 1rem;
+}
+
+.featureCard p {
+  color: var(--gray-200);
+  font-size: 0.95rem;
+}
+
+/* Testimonials Section */
+.testimonialsSection {
+  background-color: var(--dark-bg);
+  position: relative;
+  padding: 7rem 0;
+}
+
+/* CTA Section */
+.ctaSection {
+  background-color: var(--dark-bg-lighter);
+  position: relative;
+  overflow: hidden;
+  padding: 7rem 0;
+}
+
+.ctaPattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/images/tribal-pattern-2.png');
+  background-size: cover;
+  opacity: 0.05;
+  z-index: 1;
+}
+
+.ctaContent {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.ctaContent h2 {
+  font-family: var(--font-accent);
+  font-size: 2.5rem;
+  color: var(--white);
+  margin-bottom: 1.5rem;
+}
+
+.ctaContent p {
+  margin-bottom: 2.5rem;
+  font-size: 1.1rem;
+  color: var(--gray-100);
+}
+
+.subscribeForm {
+  display: flex;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.subscribeForm input {
+  flex: 1;
+  padding: 1rem 1.5rem;
+  border: none;
+  background-color: var(--dark-bg);
+  color: var(--white);
+  border-radius: 12px 0 0 12px;
+  outline: none;
+  font-size: 1rem;
+}
+
+.subscribeForm input::placeholder {
+  color: var(--gray-500);
+}
+
+.subscribeForm button {
+  background-color: var(--primary);
+  color: var(--white);
+  border: none;
+  padding: 0 1.8rem;
+  font-weight: 600;
+  border-radius: 0 12px 12px 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.subscribeForm button:hover {
+  background-color: var(--primary-dark);
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .heroText h1 {
+    font-size: 3rem;
+  }
+  
+  .sectionHeader h2,
+  .storyText h2,
+  .ctaContent h2 {
+    font-size: 2.2rem;
+  }
+  
+  .container {
+    padding: 0 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroText h1 {
+    font-size: 2.5rem;
+  }
+  
+  .heroImageContainer {
+    margin-top: 2rem;
+    min-height: 400px;
+  }
+  
+  .storyContent {
+    flex-direction: column;
+  }
+  
+  .storyImage {
+    width: 100%;
+    order: -1;
+    margin-bottom: 3rem;
+  }
+  
+  .subscribeForm {
+    flex-direction: column;
+  }
+  
+  .subscribeForm input {
+    border-radius: 12px;
+    margin-bottom: 1rem;
+  }
+  
+  .subscribeForm button {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 12px;
+  }
+  
+  .productsGrid, 
+  .categoriesGrid,
+  .featureCards {
+    gap: 2rem;
+  }
+  
+  section {
+    padding: 5rem 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .heroText h1 {
+    font-size: 2rem;
+  }
+  
+  .sectionHeader h2,
+  .storyText h2,
+  .ctaContent h2 {
+    font-size: 1.8rem;
+  }
+  
+  .heroCta {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  
+  .secondaryBtn {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .primaryBtn {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  section {
+    padding: 4rem 0;
+  }
+  
+  .container {
+    padding: 0 1.5rem;
+  }
+  
+  .sectionHeader {
+    margin-bottom: 3rem;
+  }
+} 

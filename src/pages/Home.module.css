@@ -1,0 +1,543 @@
+/* Home Page Styles */
+
+/* Hero Banner */
+.heroBanner {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+  text-align: center;
+}
+
+.heroBanner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.bannerContent {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  padding: 0 var(--spacing-lg);
+}
+
+.heroBanner h1 {
+  font-size: 3.5rem;
+  margin-bottom: var(--spacing-md);
+  color: var(--white);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.heroBanner p {
+  font-size: 1.25rem;
+  margin-bottom: var(--spacing-lg);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.bannerButtons {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-md);
+}
+
+.shopNowBtn {
+  padding: 0.75rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.learnMoreBtn {
+  padding: 0.75rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  background-color: transparent;
+  border: 2px solid var(--white);
+  color: var(--white);
+}
+
+.learnMoreBtn:hover {
+  background-color: var(--white);
+  color: var(--gray-900);
+}
+
+/* Featured Products */
+.featuredProducts {
+  background-color: var(--white);
+}
+
+.loadingSpinner {
+  text-align: center;
+  padding: var(--spacing-xl) 0;
+  font-size: 1.2rem;
+  color: var(--gray-600);
+}
+
+.errorMessage {
+  text-align: center;
+  padding: var(--spacing-xl) 0;
+  color: var(--primary);
+}
+
+.productsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+}
+
+.productItem {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.viewAllWrapper {
+  text-align: center;
+  margin-top: var(--spacing-xl);
+}
+
+.viewAllLink {
+  display: inline-flex;
+  align-items: center;
+  color: var(--primary);
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.viewAllLink svg {
+  margin-left: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.viewAllLink:hover {
+  color: var(--primary-dark);
+  text-decoration: none;
+}
+
+.viewAllLink:hover svg {
+  transform: translateX(5px);
+}
+
+/* Categories Section */
+.categoriesSection {
+  background-color: var(--gray-100);
+}
+
+.categoryGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+/* Mission Section */
+.missionSection {
+  background-color: var(--white);
+}
+
+.missionContent {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xl);
+}
+
+.missionImage {
+  flex: 1;
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.missionImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.missionImage:hover img {
+  transform: scale(1.05);
+}
+
+.missionText {
+  flex: 1;
+}
+
+.missionText h2 {
+  color: var(--gray-900);
+  margin-bottom: var(--spacing-md);
+  position: relative;
+  padding-bottom: var(--spacing-sm);
+}
+
+.missionText h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background-color: var(--primary);
+}
+
+.missionText p {
+  margin-bottom: var(--spacing-md);
+  color: var(--gray-700);
+  line-height: 1.7;
+}
+
+.readMoreLink {
+  display: inline-flex;
+  align-items: center;
+  color: var(--primary);
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.readMoreLink svg {
+  margin-left: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.readMoreLink:hover {
+  color: var(--primary-dark);
+  text-decoration: none;
+}
+
+.readMoreLink:hover svg {
+  transform: translateX(5px);
+}
+
+/* Artisan Spotlight */
+.artisanSpotlight {
+  background-color: var(--gray-100);
+}
+
+.artisanCarousel {
+  position: relative;
+  overflow: hidden;
+}
+
+.artisanCard {
+  display: flex;
+  align-items: center;
+  background-color: var(--white);
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  position: relative;
+}
+
+.activeSlide {
+  opacity: 1;
+  transform: translateX(0);
+  z-index: 2;
+}
+
+.inactiveSlide {
+  opacity: 0;
+  transform: translateX(100%);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.carouselIndicators {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--spacing-lg);
+  gap: var(--spacing-sm);
+}
+
+.indicator {
+  width: 2px;
+  height: 46px;
+  border-radius: 50%;
+  background-color: var(--gray-300);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.activeIndicator {
+  background-color: var(--primary);
+}
+
+.artisanImage {
+  flex: 0 0 40%;
+  height: 400px;
+}
+
+.artisanImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.artisanInfo {
+  flex: 1;
+  padding: var(--spacing-xl);
+}
+
+.artisanInfo h3 {
+  font-size: 1.8rem;
+  margin-bottom: var(--spacing-xs);
+  color: var(--gray-900);
+}
+
+.artisanTribe {
+  font-size: 1.1rem;
+  color: var(--primary);
+  margin-bottom: var(--spacing-md);
+  font-weight: 600;
+}
+
+.artisanStory {
+  margin-bottom: var(--spacing-lg);
+  line-height: 1.7;
+  color: var(--gray-700);
+}
+
+/* Testimonials */
+.testimonials {
+  background-color: var(--white);
+}
+
+.testimonialGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.testimonialCard {
+  background-color: var(--gray-100);
+  border-radius: var(--border-radius-lg);
+  padding: var(--spacing-lg);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonialCard:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.testimonialText {
+  font-style: italic;
+  color: var(--gray-800);
+  margin-bottom: var(--spacing-lg);
+  position: relative;
+  padding-top: var(--spacing-md);
+}
+
+.testimonialText::before {
+  content: '"';
+  position: absolute;
+  top: -20px;
+  left: -10px;
+  font-size: 5rem;
+  font-family: serif;
+  color: var(--primary);
+  opacity: 0.2;
+}
+
+.testimonialAuthor {
+  display: flex;
+  align-items: center;
+}
+
+.testimonialAuthor img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: var(--spacing-md);
+  border: 2px solid var(--primary);
+}
+
+.testimonialAuthor h4 {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--gray-900);
+}
+
+.testimonialAuthor p {
+  margin: 0;
+  font-size: 0.875rem;
+  color: var(--gray-600);
+}
+
+/* Subscribe Section */
+.subscribeSection {
+  background-color: var(--primary);
+  color: var(--white);
+  padding: var(--spacing-xl) 0;
+}
+
+.subscribeContent {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.subscribeContent h2 {
+  color: var(--white);
+  margin-bottom: var(--spacing-sm);
+}
+
+.subscribeContent p {
+  margin-bottom: var(--spacing-lg);
+  opacity: 0.9;
+}
+
+.subscribeForm {
+  display: flex;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.subscribeForm input {
+  flex: 1;
+  padding: 0.8rem 1.2rem;
+  border: none;
+  border-radius: var(--border-radius-md) 0 0 var(--border-radius-md);
+  font-size: 1rem;
+}
+
+.subscribeForm input:focus {
+  outline: none;
+}
+
+.subscribeForm button {
+  padding: 0 1.5rem;
+  border: none;
+  border-radius: 0 var(--border-radius-md) var(--border-radius-md) 0;
+  background-color: var(--gray-900);
+  color: var(--white);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.subscribeForm button:hover {
+  background-color: var(--gray-800);
+}
+
+/* Support Our Mission Section */
+.missionStats {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-xl);
+  margin-top: var(--spacing-lg);
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.statNumber {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: var(--spacing-xs);
+}
+
+.statLabel {
+  font-size: 1rem;
+  color: var(--white);
+  opacity: 0.9;
+}
+
+/* Responsive Styles */
+@media (max-width: 992px) {
+  .missionContent {
+    flex-direction: column;
+  }
+  
+  .missionImage {
+    width: 100%;
+    margin-bottom: var(--spacing-lg);
+  }
+  
+  .artisanCard {
+    flex-direction: column;
+  }
+  
+  .artisanImage {
+    width: 100%;
+    flex: 0 0 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroBanner h1 {
+    font-size: 2.5rem;
+  }
+  
+  .heroBanner p {
+    font-size: 1.1rem;
+  }
+  
+  .bannerButtons {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+  
+  .testimonialGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .subscribeForm {
+    flex-direction: column;
+  }
+  
+  .subscribeForm input {
+    border-radius: var(--border-radius-md);
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  .subscribeForm button {
+    border-radius: var(--border-radius-md);
+    padding: 0.8rem;
+  }
+
+  .missionStats {
+    flex-direction: column;
+    gap: var(--spacing-lg);
+  }
+}
+
+@media (max-width: 576px) {
+  .heroBanner h1 {
+    font-size: 2rem;
+  }
+  
+  .artisanInfo {
+    padding: var(--spacing-lg);
+  }
+  
+  .productsContainer {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Add this to make section titles black */
+:global(.section-title) {
+  color: #000000;
+  font-weight: 600;
+} 

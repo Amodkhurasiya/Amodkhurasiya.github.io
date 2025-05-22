@@ -1,0 +1,475 @@
+.productsPage {
+  padding: 1.5rem 0;
+}
+
+.pageTitle {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  color: var(--gray-500);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 600;
+}
+
+.topControls {
+  margin-bottom: 1.5rem;
+}
+
+.searchBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.searchInputContainer {
+  position: relative;
+  flex: 1;
+  max-width: 500px;
+}
+
+.searchInputContainer input {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  padding-right: 3rem;
+  border: 1px solid var(--gray-300);
+  border-radius: 50px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.searchInputContainer input:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(232, 76, 61, 0.2);
+}
+
+.searchInputContainer button {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--gray-600);
+  cursor: pointer;
+  transition: color 0.3s ease;
+  font-size: 1rem;
+}
+
+.searchInputContainer button:hover {
+  color: var(--primary);
+}
+
+.mobileFilterBtn {
+  display: none;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  background-color: var(--white);
+  border: 1px solid var(--gray-300);
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--gray-700);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.mobileFilterBtn:hover {
+  background-color: var(--gray-100);
+  border-color: var(--gray-400);
+}
+
+/* Horizontal Filter Section */
+.horizontalFilterSection {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  background-color: var(--white);
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.filterPill {
+  position: relative;
+}
+
+.filterSelect {
+  padding: 0.6rem 1rem;
+  border: 1px solid var(--gray-300);
+  border-radius: 25px;
+  background-color: var(--white);
+  color: var(--gray-700);
+  font-size: 0.9rem;
+  cursor: pointer;
+  min-width: 180px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.filterSelect:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 2px rgba(232, 76, 61, 0.1);
+}
+
+.priceRangeControls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--white);
+  border: 1px solid var(--gray-300);
+  border-radius: 25px;
+  padding: 0.6rem 1rem;
+}
+
+.priceRangeControls span {
+  font-size: 0.9rem;
+  color: var(--gray-700);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.priceRangeControls input {
+  width: 80px;
+  border: none;
+  background: transparent;
+  color: var(--gray-700);
+  font-size: 0.9rem;
+  padding: 0.2rem;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.priceRangeControls input:focus {
+  outline: none;
+}
+
+.resetFilterBtn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  background-color: var(--gray-100);
+  border: 1px solid var(--gray-300);
+  border-radius: 25px;
+  font-size: 0.9rem;
+  color: var(--gray-700);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.resetFilterBtn:hover {
+  background-color: var(--gray-200);
+}
+
+.productContent {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 100%;
+}
+
+.filterSidebar {
+  display: none; /* Hidden by default, only shown on mobile */
+  background-color: var(--white);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: 1.2rem;
+  height: fit-content;
+}
+
+/* Mobile filter sidebar styles */
+.filterHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.2rem;
+}
+
+.filterHeader h2 {
+  font-size: 1.3rem;
+  margin: 0;
+  color: var(--gray-900);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.closeFilterBtn {
+  display: block;
+  background: none;
+  border: none;
+  color: var(--gray-600);
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.filterSection {
+  margin-bottom: 1.2rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.filterSection:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.filterSection h3 {
+  font-size: 1rem;
+  margin-bottom: 0.8rem;
+  color: var(--gray-800);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.filterOptions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.filterOption {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.filterOption input[type="radio"] {
+  cursor: pointer;
+  margin: 0;
+}
+
+.filterOption label {
+  font-size: 0.9rem;
+  color: var(--gray-700);
+  cursor: pointer;
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.priceInputs {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.priceInput {
+  flex: 1;
+}
+
+.priceInput label {
+  display: block;
+  font-size: 0.9rem;
+  color: var(--gray-600);
+  margin-bottom: 0.3rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.priceInput input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid var(--gray-300);
+  border-radius: var(--border-radius-sm);
+  font-size: 0.95rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.filterActions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-top: 1.5rem;
+}
+
+.resetBtn {
+  padding: 0.8rem;
+  background-color: transparent;
+  color: var(--gray-700);
+  border: 1px solid var(--gray-300);
+  border-radius: var(--border-radius-md);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.resetBtn:hover {
+  border-color: var(--gray-400);
+  background-color: var(--gray-100);
+}
+
+.productsGrid {
+  width: 100%;
+}
+
+.resultsHeader {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.resultsCount {
+  font-size: 1rem;
+  color: var(--gray-600);
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.productsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 1.2rem;
+}
+
+.loading, .error, .noResults {
+  width: 100%;
+  padding: 3rem;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.loading {
+  color: var(--gray-600);
+  font-size: 1.1rem;
+}
+
+.error {
+  color: var(--primary);
+  font-size: 1.1rem;
+}
+
+.noResults {
+  background-color: var(--gray-100);
+  border-radius: var(--border-radius-md);
+  padding: 3rem;
+}
+
+.noResults h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+  color: var(--gray-800);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.noResults p {
+  color: var(--gray-600);
+  margin-bottom: 1.5rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.noResults .resetBtn {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+}
+
+.filterOverlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 900;
+}
+
+/* Responsive styles */
+@media (min-width: 1400px) {
+  .productsContainer {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  }
+}
+
+@media (max-width: 1200px) and (min-width: 993px) {
+  .productsContainer {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 992px) {
+  .horizontalFilterSection {
+    flex-wrap: wrap;
+    gap: 0.8rem;
+  }
+  
+  .filterPill {
+    flex: 1;
+    min-width: 200px;
+  }
+  
+  .filterSelect {
+    width: 100%;
+  }
+  
+  .priceRangeControls {
+    width: 100%;
+  }
+  
+  .productsContainer {
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .mobileFilterBtn {
+    display: flex;
+  }
+  
+  .horizontalFilterSection {
+    display: none;
+  }
+  
+  .filterSidebar {
+    position: fixed;
+    top: 0;
+    right: -320px;
+    width: 100%;
+    max-width: 320px;
+    height: 100vh;
+    border-radius: 0;
+    padding: 1.5rem;
+    z-index: 1000;
+    overflow-y: auto;
+    transition: right 0.3s ease;
+    display: block;
+  }
+  
+  .filterSidebar.open {
+    right: 0;
+  }
+  
+  .filterOverlay {
+    display: block;
+  }
+}
+
+@media (max-width: 576px) {
+  .searchBar {
+    flex-direction: column;
+    gap: 0.8rem;
+    align-items: stretch;
+    margin-bottom: 1.2rem;
+  }
+  
+  .searchInputContainer {
+    max-width: none;
+  }
+  
+  .mobileFilterBtn {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .productsContainer {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 0.8rem;
+  }
+} 

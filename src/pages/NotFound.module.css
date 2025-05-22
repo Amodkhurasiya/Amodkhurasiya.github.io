@@ -1,0 +1,92 @@
+.notFound {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f3f4f6 0%, #e5e7eb 100%);
+  padding: 2rem;
+}
+
+.content {
+  text-align: center;
+  background: white;
+  padding: 3rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  width: 100%;
+}
+
+.content h1 {
+  font-size: 6rem;
+  color: #2563eb;
+  margin: 0;
+  line-height: 1;
+}
+
+.content h2 {
+  font-size: 2rem;
+  color: #1f2937;
+  margin: 1rem 0;
+}
+
+.content p {
+  color: #6b7280;
+  margin-bottom: 2rem;
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.homeButton,
+.adminButton {
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.homeButton {
+  background-color: #2563eb;
+  color: white;
+}
+
+.homeButton:hover {
+  background-color: #1d4ed8;
+}
+
+.adminButton {
+  background-color: #1f2937;
+  color: white;
+}
+
+.adminButton:hover {
+  background-color: #111827;
+}
+
+@media (max-width: 640px) {
+  .content {
+    padding: 2rem;
+  }
+
+  .content h1 {
+    font-size: 4rem;
+  }
+
+  .content h2 {
+    font-size: 1.5rem;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .homeButton,
+  .adminButton {
+    width: 100%;
+  }
+} 

@@ -1,0 +1,287 @@
+.footer {
+  background-color: var(--dark-bg);
+  color: var(--gray-300);
+  width: 100%;
+}
+
+.tribal {
+  height: 5px;
+  width: 100%;
+  background: linear-gradient(90deg, 
+    var(--tribal-red) 0%, 
+    var(--tribal-orange) 33%, 
+    var(--tribal-amber) 66%, 
+    var(--tribal-teal) 100%);
+}
+
+.footerContent {
+  padding: 4.5rem 0 2.5rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 3rem;
+}
+
+.column {
+  flex: 1;
+  min-width: 220px;
+}
+
+.brandColumn {
+  flex: 2;
+  min-width: 300px;
+}
+
+.footerLogo {
+  display: inline-block;
+  text-decoration: none;
+  margin-bottom: 1.8rem;
+}
+
+.logoText {
+  display: flex;
+  flex-direction: column;
+}
+
+.logoMain {
+  font-family: var(--font-accent);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: 1px;
+}
+
+.logoTagline {
+  font-size: 0.9rem;
+  color: var(--tribal-amber);
+  letter-spacing: 1px;
+  margin-top: -0.3rem;
+}
+
+.description {
+  margin-bottom: 1.8rem;
+  line-height: 1.7;
+  color: var(--gray-200);
+  max-width: 400px;
+}
+
+.social {
+  display: flex;
+  gap: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.socialIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--dark-bg-lighter);
+  color: var(--gray-300);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.socialIcon:hover {
+  background-color: var(--primary);
+  color: var(--white);
+  transform: translateY(-3px);
+}
+
+.columnTitle {
+  color: var(--white);
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1.8rem;
+  position: relative;
+  padding-bottom: 0.8rem;
+}
+
+.columnTitle::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 2px;
+  background-color: var(--primary);
+}
+
+.footerLinks {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footerLinks li {
+  margin-bottom: 1rem;
+}
+
+.footerLinks li a {
+  color: var(--gray-200);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+  position: relative;
+}
+
+.footerLinks li a::before {
+  content: '•';
+  color: var(--primary);
+  margin-right: 0.5rem;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.3s ease;
+}
+
+.footerLinks li a:hover {
+  color: var(--white);
+  transform: translateX(5px);
+}
+
+.footerLinks li a:hover::before {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.contactInfo {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.8rem;
+}
+
+.contactInfo li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.2rem;
+  color: var(--gray-200);
+}
+
+.contactIcon {
+  color: var(--primary);
+  font-size: 1.2rem;
+  margin-right: 1rem;
+  flex-shrink: 0;
+}
+
+.paymentSection {
+  margin-top: 2.5rem;
+}
+
+.paymentTitle {
+  color: var(--white);
+  font-size: 1.1rem;
+  margin-bottom: 1.2rem;
+}
+
+.paymentIcons {
+  display: flex;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+}
+
+.paymentIcon {
+  font-size: 2.2rem;
+  color: var(--gray-300);
+  transition: all 0.3s ease;
+}
+
+.paymentIcon:hover {
+  color: var(--white);
+  transform: translateY(-3px);
+}
+
+.copyright {
+  background-color: var(--dark-bg-lighter);
+  padding: 1.8rem 0;
+  font-size: 0.95rem;
+}
+
+.copyright .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.copyright p {
+  margin: 0;
+  color: var(--gray-200);
+}
+
+.links {
+  display: flex;
+  gap: 1.8rem;
+}
+
+.links a {
+  color: var(--gray-200);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.links a:hover {
+  color: var(--primary);
+}
+
+/* Media Queries */
+@media (max-width: 992px) {
+  .footerContent {
+    padding: 3.5rem 0 2rem;
+  }
+  
+  .row {
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column;
+    gap: 3rem;
+  }
+  
+  .column, .brandColumn {
+    min-width: 100%;
+  }
+  
+  .copyright .container {
+    flex-direction: column;
+    gap: 1.2rem;
+    text-align: center;
+  }
+  
+  .links {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .footerContent {
+    padding: 3rem 0 1.5rem;
+  }
+  
+  .links {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+  
+  .socialIcon {
+    width: 36px;
+    height: 36px;
+    font-size: 0.9rem;
+  }
+} 

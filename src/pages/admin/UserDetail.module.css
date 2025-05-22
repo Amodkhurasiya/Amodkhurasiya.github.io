@@ -1,0 +1,355 @@
+.container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: #1a1c23;
+  min-height: 100vh;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.header h1 {
+  margin: 0;
+  margin-left: 1rem;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.8rem;
+}
+
+.backButton {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.9rem;
+  transition: background-color 0.3s;
+  color: #6366f1;
+}
+
+.backButton:hover {
+  background-color: rgba(99, 102, 241, 0.1);
+}
+
+.backButton svg {
+  margin-right: 0.5rem;
+}
+
+.userCard {
+  background-color: #252836;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.userHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #374151;
+}
+
+.userAvatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 1.5rem;
+  background-color: #2e3447;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.userAvatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.defaultAvatar {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #374151;
+  color: #9da3b0;
+  font-size: 2.5rem;
+}
+
+.userInfo h2 {
+  margin: 0 0 0.5rem 0;
+  color: #fff;
+}
+
+.roleBadge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.roleBadge svg {
+  margin-right: 0.5rem;
+}
+
+.adminBadge {
+  background-color: rgba(99, 102, 241, 0.2);
+  color: #6366f1;
+}
+
+.customerBadge {
+  background-color: rgba(16, 185, 129, 0.2);
+  color: #10b981;
+}
+
+.detailsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.detailSection {
+  margin-bottom: 1rem;
+}
+
+.detailSection h3 {
+  font-size: 1.1rem;
+  margin: 0 0 1rem 0;
+  color: #6366f1;
+  border-bottom: 1px solid #374151;
+  padding-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.detailItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.detailItem svg {
+  color: #9da3b0;
+  margin-right: 0.75rem;
+  min-width: 1rem;
+}
+
+.detailItem span {
+  color: #9da3b0;
+  margin-right: 0.5rem;
+  min-width: 4rem;
+}
+
+.detailItem strong {
+  color: #fff;
+  word-break: break-word;
+}
+
+.actionButtons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #374151;
+}
+
+.editButton, .deleteButton {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s;
+  font-family: 'Poppins', sans-serif;
+}
+
+.editButton {
+  background-color: #6366f1;
+  color: white;
+}
+
+.deleteButton {
+  background-color: #ef4444;
+  color: white;
+}
+
+.editButton:hover {
+  background-color: #4f46e5;
+}
+
+.deleteButton:hover {
+  background-color: #dc2626;
+}
+
+.editButton svg, .deleteButton svg {
+  margin-right: 0.5rem;
+}
+
+.ordersSection {
+  background-color: #252836;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+}
+
+.ordersSection h3 {
+  color: #6366f1;
+  margin-top: 0;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.ordersTable {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.ordersTable table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.ordersTable th, .ordersTable td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #374151;
+}
+
+.ordersTable th {
+  background-color: #1e2230;
+  color: #9da3b0;
+  font-weight: 600;
+}
+
+.statusBadge {
+  display: inline-block;
+  padding: 0.35rem 0.75rem;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.statusPending {
+  background-color: rgba(245, 158, 11, 0.15);
+  color: #f59e0b;
+}
+
+.statusConfirmed {
+  background-color: rgba(59, 130, 246, 0.15);
+  color: #3b82f6;
+}
+
+.statusShipped {
+  background-color: rgba(139, 92, 246, 0.15);
+  color: #8b5cf6;
+}
+
+.statusDelivered {
+  background-color: rgba(16, 185, 129, 0.15);
+  color: #10b981;
+}
+
+.statusCancelled {
+  background-color: rgba(239, 68, 68, 0.15);
+  color: #ef4444;
+}
+
+.viewOrderButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(99, 102, 241, 0.1);
+  color: #6366f1;
+  border: none;
+  border-radius: 6px;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-family: 'Poppins', sans-serif;
+}
+
+.viewOrderButton:hover {
+  background-color: rgba(99, 102, 241, 0.2);
+}
+
+.noOrders {
+  color: #9da3b0;
+  text-align: center;
+  padding: 1rem 0;
+  font-style: italic;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+  font-size: 1.2rem;
+  color: #6366f1;
+  background-color: #252836;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+}
+
+.error {
+  text-align: center;
+  color: #ef4444;
+  padding: 2rem;
+  background-color: #252836;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+  
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .header h1 {
+    margin-left: 0;
+    margin-top: 1rem;
+  }
+  
+  .userHeader {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .userAvatar {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+  
+  .detailsContainer {
+    grid-template-columns: 1fr;
+  }
+  
+  .actionButtons {
+    flex-direction: column;
+  }
+} 
