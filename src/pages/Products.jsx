@@ -55,11 +55,17 @@ const Products = () => {
       try {
         // Fetch products
         const productsResponse = await productAPI.getAllProducts();
-        dispatch(fetchProductsSuccess(productsResponse));
+        // Ensure productsResponse is an array
+        const productsArray = Array.isArray(productsResponse) ? productsResponse : 
+                             (productsResponse && Array.isArray(productsResponse.products)) ? 
+                             productsResponse.products : [];
+        dispatch(fetchProductsSuccess(productsArray));
         
         // Fetch categories
         const categoriesResponse = await productAPI.getCategories();
-        dispatch(fetchCategoriesSuccess(categoriesResponse.data));
+        const categoriesArray = Array.isArray(categoriesResponse.data) ? 
+                               categoriesResponse.data : [];
+        dispatch(fetchCategoriesSuccess(categoriesArray));
       } catch (error) {
         dispatch(fetchProductsFailure(error.message));
       }
