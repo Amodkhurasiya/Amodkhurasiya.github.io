@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { FaArrowLeft, FaSort, FaEye, FaSearch, FaCalendarAlt } from 'react-icons/fa';
 import styles from './OrdersManagement.module.css';
+import { API_URL } from '../../utils/env';
 
 const OrdersManagement = () => {
   const navigate = useNavigate();
@@ -62,7 +63,7 @@ const OrdersManagement = () => {
       const token = localStorage.getItem('token');
       if (!token) throw new Error('No authentication token found');
 
-      const response = await fetch(`http://localhost:5000/api/admin/orders/${orderId}`, {
+      const response = await fetch(`${API_URL}/admin/orders/${orderId}`, {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -94,7 +95,7 @@ const OrdersManagement = () => {
 
       console.log('Fetching orders with token:', token.substring(0, 15) + '...');
       
-      const response = await fetch('http://localhost:5000/api/admin/orders', {
+      const response = await fetch(`${API_URL}/admin/orders`, {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -226,7 +227,7 @@ const OrdersManagement = () => {
       const token = localStorage.getItem('token');
       if (!token) throw new Error('No authentication token found');
 
-      const response = await fetch(`http://localhost:5000/api/admin/orders/${orderId}`, {
+      const response = await fetch(`${API_URL}/admin/orders/${orderId}`, {
         method: 'PUT',
         headers: {
           'Authorization': `Bearer ${token}`,

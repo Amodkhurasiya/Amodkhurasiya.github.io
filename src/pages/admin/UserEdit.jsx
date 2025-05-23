@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { FaArrowLeft, FaSave, FaTimes } from 'react-icons/fa';
 import styles from './UserEdit.module.css';
+import { API_URL } from '../../utils/env';
 
 const UserEdit = () => {
   const { id } = useParams();
@@ -34,7 +35,7 @@ const UserEdit = () => {
           throw new Error('Authentication required');
         }
 
-        const response = await fetch(`http://localhost:5000/api/admin/users/${id}`, {
+        const response = await fetch(`${API_URL}/admin/users/${id}`, {
           headers: {
             'Authorization': `Bearer ${token}`
           }
@@ -136,7 +137,7 @@ const UserEdit = () => {
         throw new Error('Authentication required');
       }
 
-      const response = await fetch(`http://localhost:5000/api/admin/users/${id}`, {
+      const response = await fetch(`${API_URL}/admin/users/${id}`, {
         method: 'PUT',
         headers: {
           'Authorization': `Bearer ${token}`,

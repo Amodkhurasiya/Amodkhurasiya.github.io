@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { loginSuccess, logout, restoreAuth } from '../redux/slices/authSlice';
+import { API_URL } from '../utils/env';
 
 /**
  * AuthProvider component to manage authentication state across the app.
@@ -26,7 +27,7 @@ const AuthProvider = ({ children }) => {
         }
         
         // Check token validity with backend
-        const response = await fetch('http://localhost:5000/api/auth/verify-token', {
+        const response = await fetch(`${API_URL}/auth/verify-token`, {
           method: 'GET',
           headers: {
             'Authorization': `Bearer ${storedToken}`
@@ -65,7 +66,7 @@ const AuthProvider = ({ children }) => {
             return;
           }
           
-          const response = await fetch('http://localhost:5000/api/auth/refresh-token', {
+          const response = await fetch(`${API_URL}/auth/refresh-token`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',

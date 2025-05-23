@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { FaArrowLeft, FaUser, FaEnvelope, FaPhone, FaCalendarAlt, 
          FaMapMarkerAlt, FaUserShield, FaEdit, FaTrash } from 'react-icons/fa';
 import styles from './UserDetail.module.css';
+import { API_URL } from '../../utils/env';
 
 const UserDetail = () => {
   const { id } = useParams();
@@ -22,7 +23,7 @@ const UserDetail = () => {
         }
 
         // Fetch user details
-        const userResponse = await fetch(`http://localhost:5000/api/admin/users/${id}`, {
+        const userResponse = await fetch(`${API_URL}/admin/users/${id}`, {
           headers: {
             'Authorization': `Bearer ${token}`
           }
@@ -36,7 +37,7 @@ const UserDetail = () => {
         setUser(userData);
 
         // Fetch user's orders
-        const ordersResponse = await fetch(`http://localhost:5000/api/admin/users/${id}/orders`, {
+        const ordersResponse = await fetch(`${API_URL}/admin/users/${id}/orders`, {
           headers: {
             'Authorization': `Bearer ${token}`
           }
@@ -74,7 +75,7 @@ const UserDetail = () => {
         throw new Error('Authentication required');
       }
 
-      const response = await fetch(`http://localhost:5000/api/admin/users/${id}`, {
+      const response = await fetch(`${API_URL}/admin/users/${id}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`

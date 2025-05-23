@@ -1,0 +1,55 @@
+{
+  "success": true,
+  "products": [
+    {
+      "id": "1",
+      "name": "Traditional Gond Painting",
+      "price": 2500,
+      "description": "Handcrafted Gond art from Madhya Pradesh depicting rural scenes with intricate patterns",
+      "images": ["https://i.ibb.co/PMR4DJz/gond-art.jpg"],
+      "category": "paintings",
+      "stock": 10,
+      "rating": 4.8
+    },
+    {
+      "id": "2",
+      "name": "Dokra Metal Art Figurine",
+      "price": 1800,
+      "description": "Traditional lost-wax casting metal craft figurine from Chhattisgarh",
+      "images": ["https://i.ibb.co/G3TQjZ5/dokra-art.jpg"],
+      "category": "sculptures",
+      "stock": 7,
+      "rating": 4.5
+    },
+    {
+      "id": "3",
+      "name": "Madhubani Painting",
+      "price": 3200,
+      "description": "Colorful folk painting from Bihar region with natural dyes on handmade paper",
+      "images": ["https://i.ibb.co/PGvWHx7/madhubani.jpg"],
+      "category": "paintings",
+      "stock": 5,
+      "rating": 4.9
+    },
+    {
+      "id": "4",
+      "name": "Warli Painted Earthen Pot",
+      "price": 1200,
+      "description": "Traditional earthen pot with Warli tribal art from Maharashtra",
+      "images": ["https://i.ibb.co/QHmqXLM/warli-pot.jpg"],
+      "category": "pottery",
+      "stock": 12,
+      "rating": 4.4
+    },
+    {
+      "id": "5",
+      "name": "Pattachitra Scroll Painting",
+      "price": 2800,
+      "description": "Ancient cloth-based scroll painting from Odisha with mythological themes",
+      "images": ["https://i.ibb.co/r6Z2pm2/pattachitra.jpg"],
+      "category": "paintings",
+      "stock": 6,
+      "rating": 4.7
+    }
+  ]
+} 

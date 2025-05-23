@@ -8,6 +8,7 @@ import { IoIosArrowDropleftCircle, IoIosArrowDroprightCircle } from 'react-icons
 import { BsHeartFill } from 'react-icons/bs';
 import styles from './ProductDetail.module.css';
 import { productRatingAPI } from '../services/api';
+import { API_URL } from '../utils/env';
 
 const ProductDetail = () => {
   const { id } = useParams();
@@ -180,7 +181,8 @@ const ProductDetail = () => {
     if (!imgUrl) return '/images/placeholder.png';
     
     try {
-      console.log('Processing image URL:', imgUrl);
+      // Get API base URL without /api path
+      const apiBaseUrl = API_URL.replace('/api', '');
       
       // Check if URL is already absolute
       if (imgUrl.startsWith('http://') || imgUrl.startsWith('https://')) {
@@ -194,12 +196,12 @@ const ProductDetail = () => {
       
       // Handle path with duplicate '/uploads/uploads/'
       if (imgUrl.startsWith('/uploads/uploads/')) {
-        return `http://localhost:5000${imgUrl.replace('/uploads/uploads/', '/uploads/')}`;
+        return `${apiBaseUrl}${imgUrl.replace('/uploads/uploads/', '/uploads/')}`;
       }
       
       // Check if URL starts with /uploads
       if (imgUrl.startsWith('/uploads/')) {
-        return `http://localhost:5000${imgUrl}`;
+        return `${apiBaseUrl}${imgUrl}`;
       }
       
       // Check if URL contains cloudinary
@@ -216,7 +218,7 @@ const ProductDetail = () => {
       if (imgUrl.includes('uploads')) {
         // Extract just the filename if it's a full path
         const filename = imgUrl.split('/').pop();
-        return `http://localhost:5000/uploads/${filename}`;
+        return `${apiBaseUrl}/uploads/${filename}`;
       }
       
       // If it's just a filename with no path indicators,

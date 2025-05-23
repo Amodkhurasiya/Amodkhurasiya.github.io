@@ -202,3 +202,19 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 - Special thanks to all tribal artisans whose work inspired this platform
 - All open-source libraries and frameworks used in this project 
+
+## Backend API
+The backend API is hosted at: https://trybee-backend-production.up.railway.app/api
+
+## Frontend
+The frontend is hosted at: https://trybee.me
+
+## Development
+To run the project locally:
+
+1. Clone the repository
+2. Install dependencies: `npm install`
+3. Start the development server: `npm run dev`
+
+## Environment Variables
+- `VITE_API_URL`: Backend API URL (defaults to http://localhost:5000/api in development) 

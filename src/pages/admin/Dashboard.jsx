@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { FaUsers, FaShoppingBag, FaRupeeSign, FaShoppingCart, FaPlus, FaArrowLeft, FaEye } from 'react-icons/fa';
 import styles from './Dashboard.module.css';
+import { API_URL } from '../../utils/env';
 
 const AdminDashboard = () => {
   const navigate = useNavigate();
@@ -45,7 +46,7 @@ const AdminDashboard = () => {
       if (!token) throw new Error('No authentication token found');
 
       // Fetch dashboard statistics
-      const response = await fetch('http://localhost:5000/api/admin/stats', {
+      const response = await fetch(`${API_URL}/admin/stats`, {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -60,7 +61,7 @@ const AdminDashboard = () => {
       console.log('Dashboard stats:', data);
       
       // Fetch recent orders separately for more details
-      const ordersResponse = await fetch('http://localhost:5000/api/admin/orders?limit=5', {
+      const ordersResponse = await fetch(`${API_URL}/admin/orders?limit=5`, {
         headers: {
           'Authorization': `Bearer ${token}`
         }

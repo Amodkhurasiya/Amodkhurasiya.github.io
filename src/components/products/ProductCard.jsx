@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import { addToCart } from '../../redux/slices/cartSlice';
 import { FaShoppingCart, FaStar, FaStarHalfAlt, FaRegStar, FaImage } from 'react-icons/fa';
 import styles from './ProductCard.module.css';
+import { API_URL } from '../../utils/env';
 
 const ProductCard = ({ product }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -81,6 +82,9 @@ const ProductCard = ({ product }) => {
       // Handle direct file uploads which are stored in /uploads
       if (typeof imgUrl === 'string') {
         try {
+          // Get API base URL without /api path
+          const apiBaseUrl = API_URL.replace('/api', '');
+          
           // Check for data URLs (base64 encoded images)
           if (imgUrl.startsWith('data:image/')) {
             return imgUrl;
@@ -98,12 +102,12 @@ const ProductCard = ({ product }) => {
           
           // Handle duplicate uploads path issue
           if (imgUrl.startsWith('/uploads/uploads/')) {
-            return `http://localhost:5000${imgUrl.replace('/uploads/uploads/', '/uploads/')}`;
+            return `${apiBaseUrl}${imgUrl.replace('/uploads/uploads/', '/uploads/')}`;
           }
           
           // Check if URL starts with /uploads which is how backend stores images
           if (imgUrl.startsWith('/uploads/')) {
-            return `http://localhost:5000${imgUrl}`;
+            return `${apiBaseUrl}${imgUrl}`;
           }
           
           // Check if URL contains cloudinary
@@ -124,7 +128,7 @@ const ProductCard = ({ product }) => {
           if (imgUrl.includes('uploads')) {
             // Extract just the filename if it's a full path
             const filename = imgUrl.split('/').pop();
-            return `http://localhost:5000/uploads/${filename}`;
+            return `${apiBaseUrl}/uploads/${filename}`;
           }
           
           // If it's just a filename, assume it's in the public/images folder

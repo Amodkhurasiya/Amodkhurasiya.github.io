@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { FaPlus, FaEdit, FaTrash, FaImage, FaFilter, FaSearch, FaTimes, FaEye, FaArrowLeft, FaSort } from 'react-icons/fa';
 import styles from './ProductManagement.module.css';
+import { API_URL } from '../../utils/env';
 
 const ProductManagement = () => {
   const navigate = useNavigate();
@@ -60,7 +61,7 @@ const ProductManagement = () => {
   const fetchProducts = async () => {
     try {
       setLoading(true);
-      const response = await fetch('http://localhost:5000/api/admin/products', {
+      const response = await fetch(`${API_URL}/admin/products`, {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`
         }
@@ -194,6 +195,9 @@ const ProductManagement = () => {
     if (!imgUrl) return '/images/placeholder.png';
     
     try {
+      // Get API base URL without /api path
+      const apiBaseUrl = API_URL.replace('/api', '');
+      
       // Check if URL is already absolute
       if (imgUrl.startsWith('http://') || imgUrl.startsWith('https://')) {
         return imgUrl;
@@ -206,13 +210,13 @@ const ProductManagement = () => {
       
       // Handle path with duplicate '/uploads/uploads/'
       if (imgUrl.startsWith('/uploads/uploads/')) {
-        return `http://localhost:5000${imgUrl.replace('/uploads/uploads/', '/uploads/')}`;
+        return `${apiBaseUrl}${imgUrl.replace('/uploads/uploads/', '/uploads/')}`;
       }
       
       // Default handling: append to API base URL
       return imgUrl.startsWith('/') 
-        ? `http://localhost:5000${imgUrl}`
-        : `http://localhost:5000/${imgUrl}`;
+        ? `${apiBaseUrl}${imgUrl}`
+        : `${apiBaseUrl}/${imgUrl}`;
     } catch (error) {
       console.error('Error processing image URL:', error);
       return '/images/placeholder.png';
@@ -257,7 +261,7 @@ const ProductManagement = () => {
         formDataToSend.append('images', file);
       });
 
-      const response = await fetch('http://localhost:5000/api/admin/products', {
+      const response = await fetch(`${API_URL}/admin/products`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`
@@ -307,7 +311,7 @@ const ProductManagement = () => {
         });
       }
 
-      const response = await fetch(`http://localhost:5000/api/admin/products/${selectedProduct._id}`, {
+      const response = await fetch(`${API_URL}/admin/products/${selectedProduct._id}`, {
         method: 'PUT',
         headers: {
           'Authorization': `Bearer ${token}`
@@ -347,7 +351,7 @@ const ProductManagement = () => {
       
       console.log('Deleting product:', productId);
       
-      const response = await fetch(`http://localhost:5000/api/admin/products/${productId}`, {
+      const response = await fetch(`${API_URL}/admin/products/${productId}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`,

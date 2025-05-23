@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { FaArrowLeft, FaCheck, FaTruck, FaBox, FaClock, FaTimes } from 'react-icons/fa';
 import styles from './OrderDetail.module.css';
+import { API_URL } from '../utils/env';
 
 const OrderDetail = () => {
   const { id } = useParams();
@@ -14,7 +15,7 @@ const OrderDetail = () => {
     const fetchOrderDetails = async () => {
       setLoading(true);
       try {
-        const response = await fetch(`http://localhost:5000/api/orders/${id}`, {
+        const response = await fetch(`${API_URL}/orders/${id}`, {
           headers: {
             'Authorization': `Bearer ${localStorage.getItem('token')}`
           }
@@ -83,6 +84,9 @@ const OrderDetail = () => {
     if (!imgUrl) return '/images/placeholder.png';
     
     try {
+      // Get API base URL without /api path
+      const apiBaseUrl = API_URL.replace('/api', '');
+      
       // Check if URL is already absolute
       if (imgUrl.startsWith('http://') || imgUrl.startsWith('https://')) {
         return imgUrl;
@@ -95,19 +99,19 @@ const OrderDetail = () => {
       
       // Handle path with duplicate '/uploads/uploads/'
       if (imgUrl.startsWith('/uploads/uploads/')) {
-        return `http://localhost:5000${imgUrl.replace('/uploads/uploads/', '/uploads/')}`;
+        return `${apiBaseUrl}${imgUrl.replace('/uploads/uploads/', '/uploads/')}`;
       }
       
       // Check if URL starts with /uploads
       if (imgUrl.startsWith('/uploads/')) {
-        return `http://localhost:5000${imgUrl}`;
+        return `${apiBaseUrl}${imgUrl}`;
       }
       
       // If URL includes uploads directory
       if (imgUrl.includes('uploads')) {
         // Extract just the filename if it's a full path
         const filename = imgUrl.split('/').pop();
-        return `http://localhost:5000/uploads/${filename}`;
+        return `${apiBaseUrl}/uploads/${filename}`;
       }
       
       // If it's just a filename with no path indicators

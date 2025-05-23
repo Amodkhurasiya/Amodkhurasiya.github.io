@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { loginSuccess } from '../../redux/slices/authSlice';
 import { FaArrowLeft, FaImage } from 'react-icons/fa';
 import styles from './AddProduct.module.css';
+import { API_URL } from '../../utils/env';
 
 const AddProduct = () => {
   const navigate = useNavigate();
@@ -91,7 +92,7 @@ const AddProduct = () => {
       console.log('Submitting product with token:', token.substring(0, 10) + '...');
       
       // Send request to API
-      const response = await fetch('http://localhost:5000/api/admin/products', {
+      const response = await fetch(`${API_URL}/admin/products`, {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`

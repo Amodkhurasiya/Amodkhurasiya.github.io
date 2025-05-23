@@ -23,21 +23,21 @@ jobs:
       - name: Build
         run: npm run build
         env:
-          VITE_API_URL: ${{ secrets.VITE_API_URL }}
+          VITE_API_URL: https://trybee-backend.railway.app/api
+
+      - name: Create env-config.js
+        run: |
+          echo "// This file is dynamically generated during the build process" > dist/env-config.js
+          echo "window.ENV = {" >> dist/env-config.js
+          echo "  VITE_API_URL: \"https://trybee-backend.railway.app/api\"" >> dist/env-config.js
+          echo "};" >> dist/env-config.js
+
+      - name: Create CNAME
+        run: echo "trybee.me" > dist/CNAME
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: dist
           branch: gh-pages
-          clean: true
-
-      - name: Create CNAME
-        run: echo "trybee.me" > dist/CNAME
-
-      - name: Deploy CNAME
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          folder: dist
-          branch: gh-pages
-          clean: false 
+          clean: true 

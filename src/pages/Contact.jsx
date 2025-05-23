@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaClock, FaFacebook, FaTwitter, FaInstagram, FaYoutube, FaHandshake, FaQuestionCircle, FaHeadset } from 'react-icons/fa';
 import styles from './Contact.module.css';
+import { API_URL } from '../utils/env';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -72,7 +73,7 @@ const Contact = () => {
     setSubmitError('');
     
     try {
-      const response = await fetch('http://localhost:5000/api/contact', {
+      const response = await fetch(`${API_URL}/contact`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

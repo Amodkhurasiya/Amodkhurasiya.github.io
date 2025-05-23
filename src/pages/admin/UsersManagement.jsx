@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { FaUserShield, FaUser, FaSearch, FaSort, FaUserEdit, FaTrash, FaEye, FaArrowLeft } from 'react-icons/fa';
 import styles from './UsersManagement.module.css';
+import { API_URL } from '../../utils/env';
 
 const UsersManagement = () => {
   const navigate = useNavigate();
@@ -33,7 +34,7 @@ const UsersManagement = () => {
   const fetchUsers = async () => {
     try {
       setLoading(true);
-      const response = await fetch('http://localhost:5000/api/admin/users', {
+      const response = await fetch(`${API_URL}/admin/users`, {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`
         }
@@ -60,10 +61,11 @@ const UsersManagement = () => {
     }
     
     try {
-      const response = await fetch(`http://localhost:5000/api/admin/users/${userId}`, {
+      const response = await fetch(`${API_URL}/admin/users/${userId}`, {
         method: 'DELETE',
         headers: {
-          'Authorization': `Bearer ${localStorage.getItem('token')}`
+          'Authorization': `Bearer ${localStorage.getItem('token')}`,
+          'Content-Type': 'application/json'
         }
       });
       

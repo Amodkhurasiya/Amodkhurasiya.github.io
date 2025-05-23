@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { FaArrowLeft, FaStar, FaEdit, FaTrash, FaBox, FaRupeeSign, FaCalendarAlt, FaTag } from 'react-icons/fa';
+import { FaArrowLeft, FaStar, FaEdit, FaTrash, FaBox, FaRupeeSign, FaCalendarAlt, FaTag, FaImage } from 'react-icons/fa';
 import styles from './ProductDetail.module.css';
+import { API_URL } from '../../utils/env';
 
 const AdminProductDetail = () => {
   const { id } = useParams();
@@ -20,7 +21,7 @@ const AdminProductDetail = () => {
           throw new Error('Authentication required');
         }
 
-        const response = await fetch(`http://localhost:5000/api/products/${id}`, {
+        const response = await fetch(`${API_URL}/products/${id}`, {
           headers: {
             'Authorization': `Bearer ${token}`
           }
@@ -56,7 +57,7 @@ const AdminProductDetail = () => {
         throw new Error('Authentication required');
       }
 
-      const response = await fetch(`http://localhost:5000/api/products/${id}`, {
+      const response = await fetch(`${API_URL}/products/${id}`, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`
@@ -118,18 +119,21 @@ const AdminProductDetail = () => {
   const getProcessedImageUrl = (imgUrl) => {
     if (!imgUrl) return '/images/placeholder.png';
     
-    // Check if URL is already absolute
-    if (imgUrl.startsWith('http://') || imgUrl.startsWith('https://')) {
-      return imgUrl;
+    try {
+      // Get API base URL without /api path
+      const apiBaseUrl = API_URL.replace('/api', '');
+      
+      // Check if URL is already absolute
+      if (imgUrl.startsWith('http://') || imgUrl.startsWith('https://')) {
+        return imgUrl;
+      }
+      
+      // Handle relative URLs
+      return `${apiBaseUrl}${imgUrl}`;
+    } catch (error) {
+      console.error('Error processing image URL:', error);
+      return '/images/placeholder.png';
     }
-    
-    // Check if URL starts with /uploads
-    if (imgUrl.startsWith('/uploads/')) {
-      return `http://localhost:5000${imgUrl}`;
-    }
-    
-    // Default fallback
-    return `${window.location.origin}${imgUrl}`;
   };
 
   if (loading) {
