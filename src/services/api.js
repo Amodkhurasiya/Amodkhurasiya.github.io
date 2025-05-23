@@ -62,25 +62,25 @@ const getLocalFallbackProducts = async () => {
     if (!response.ok) {
       throw new Error('Failed to load local products');
     }
-    return await response.json();
+    const data = await response.json();
+    // Ensure we return an array
+    return Array.isArray(data) ? data : 
+           (data && Array.isArray(data.products)) ? data.products : [];
   } catch (fallbackError) {
     console.error('Error loading fallback products:', fallbackError);
-    // Last resort static data
-    return {
-      success: true,
-      products: [
-        {
-          id: "fallback1",
-          name: "Traditional Tribal Art",
-          price: 1500,
-          description: "Handmade tribal art piece - static fallback",
-          images: ["https://i.ibb.co/PMR4DJz/gond-art.jpg"],
-          category: "art",
-          stock: 5,
-          rating: 4.5
-        }
-      ]
-    };
+    // Last resort static data - ensure it's an array
+    return [
+      {
+        id: "fallback1",
+        name: "Traditional Tribal Art",
+        price: 1500,
+        description: "Handmade tribal art piece - static fallback",
+        images: ["https://i.ibb.co/PMR4DJz/gond-art.jpg"],
+        category: "art",
+        stock: 5,
+        rating: 4.5
+      }
+    ];
   }
 };
 
